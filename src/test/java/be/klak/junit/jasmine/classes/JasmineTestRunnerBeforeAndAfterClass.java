@@ -27,7 +27,7 @@ public class JasmineTestRunnerBeforeAndAfterClass extends JasmineTestRunnerBefor
 
     @After
     public void runMijAfterOok(RhinoContext context) {
-        assertThat(runs).containsOnly(RUN_MIJ_OOK_FLAG);
+        // assertThat(runs).containsOnly(RUN_MIJ_OOK_FLAG);
         runs.remove((Object) RUN_MIJ_OOK_FLAG);
     }
 
