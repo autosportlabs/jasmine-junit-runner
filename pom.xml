@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
 	<modelVersion>4.0.0</modelVersion>
-
 
 	<groupId>be.cegeka</groupId>
 	<artifactId>jasminejunitrunner</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0asl-SNAPSHOT</version>
 	<name>Jasmine Junit Runner</name>
+
+	<distributionManagement>
+	    <repository>
+	        <id>aws-release</id>
+	        <name>AWS Release Repository</name>
+	        <url>s3://asl-mvn/release</url>
+	    </repository>
+	    <snapshotRepository>
+	        <id>aws-snapshot</id>
+	        <name>AWS Snapshot Repository</name>
+	        <url>s3://asl-mvn/snapshot</url>
+	    </snapshotRepository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
@@ -46,6 +60,14 @@
 	</dependencies>
 
 	<build>
+		<extensions>
+			<extension>
+			    <groupId>org.springframework.build</groupId>
+			    <artifactId>aws-maven</artifactId>
+			    <version>4.4.0.RELEASE</version>
+			</extension>
+		</extensions>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
